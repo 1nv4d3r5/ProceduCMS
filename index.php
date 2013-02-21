@@ -6,6 +6,7 @@ require_once('includes/functions.php');
 require_once('includes/header.php');
 ?>
 
+
 			<div id="content_wrapper">
 			<img src="images/header.jpg" alt="static image"/>
 				<div id="content">

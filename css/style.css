@@ -73,6 +73,9 @@ h1{
 	border-bottom: 1px solid #333;
 	margin-bottom: 10px;
 }
+#header a#logo img{
+	padding-top: 4px;
+}
 #header a#logo:hover{
 	border-bottom: none;
 	text-decoration: none;
