@@ -35,9 +35,30 @@ require_once('includes/functions.php');
 					<h1>Lorem Ipsum Dolor Sit Ameth.</h1>
 					<p><img class="left" src="images/thumb.jpg" alt=""/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim quam, aliquet quis tempus et, luctus feugiat leo. Fusce laoreet ornare velit non luctus. Pellentesque euismod malesuada mi, id consectetur quam volutpat a. In leo mi, porta at volutpat sagittis, volutpat et est. Nam tincidunt tincidunt tristique. Nunc sit amet luctus elit. Fusce aliquet dapibus ante eget dictum. Morbi eu luctus dui. Etiam metus nibh, laoreet ac facilisis vel, sagittis et ligula. Maecenas pulvinar justo id orci congue condimentum. Proin sagittis hendrerit ornare. Praesent vulputate elementum purus, nec vehicula mauris blandit ac. Pellentesque sodales volutpat mattis. Etiam suscipit imperdiet enim, nec tempus nisl lacinia in. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 					<p>Sed lorem magna, dictum quis varius nec, auctor non nunc. Ut nibh odio, mollis sed sodales vitae, pulvinar ut magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque ipsum vel dolor eleifend tincidunt. Duis viverra urna ut mauris auctor non interdum felis vulputate. Quisque vel diam dolor, in vehicula sapien. Donec aliquet ornare rhoncus.</p>
+					<p>Sed lorem magna, dictum quis varius nec, auctor non nunc. Ut nibh odio, mollis sed sodales vitae, pulvinar ut magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque ipsum vel dolor eleifend tincidunt. Duis viverra urna ut mauris auctor non interdum felis vulputate. Quisque vel diam dolor, in vehicula sapien. Donec aliquet ornare rhoncus.</p>
+					<p>Sed lorem magna, dictum quis varius nec, auctor non nunc. Ut nibh odio, mollis sed sodales vitae, pulvinar ut magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque ipsum vel dolor eleifend tincidunt. Duis viverra urna ut mauris auctor non interdum felis vulputate. Quisque vel diam dolor, in vehicula sapien. Donec aliquet ornare rhoncus.</p>
 				</div>
 				<div id="sidebar">
-					<h2>Sidebar title</h2>
+					<div class="sidebar_content">
+						<h2>Links</h2>
+						<ul>
+							<li><a href="#">Some link</a></li>
+							<li><a href="#">Some link</a></li>
+							<li><a href="#">Some link</a></li>
+							<li><a href="#">Some link</a></li>
+						</ul>
+					</div>
+					<div class="sidebar_content">
+						<h2>Admin</h2>
+						<form action="login.php" method="POST">
+							<label for="username">User:</label>
+							<input type="text" name="username" id="username"/><br/>
+							<label for="password">Password:</label>
+							<input type="password" name="password" id="password"/><br/>
+							<input type="submit" value="login"/>
+						</form>
+					</div>
+					
 				</div>
 			</div>
 			<div id="footer">
