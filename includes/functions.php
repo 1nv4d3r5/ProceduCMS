@@ -10,7 +10,15 @@ function getUserDetails($username)
 	{
 		$db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 		$sql = "SELECT * FROM `users` WHERE `username` = '{$username}'";		
-		return mysqli_fetch_assoc(mysqli_query($db, $sql)) or false;		 
+		$result = mysqli_fetch_assoc(mysqli_query($db, $sql));		 
+		if(!empty($result))
+		{
+			return $result;
+		}
+		else 
+		{
+			return false;
+		}
 	}
 }
 

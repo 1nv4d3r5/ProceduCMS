@@ -3,17 +3,20 @@
 require_once('includes/config.php');
 require_once('includes/functions.php');
 
-$dbPassword = '167dc44a97c5c37d34a5c527a8052187';
+session_start();
 
 $userInfo = getUserDetails($_POST['username']);
-
 if(md5(SALT.$_POST['password']) == $userInfo['password'] && $_POST['username'] == $userInfo['username'])
-{
-	echo 'correct';
+{	
+	$_SESSION['user']['username'] = $userInfo['username'];
+	$_SESSION['user']['status'] = 'logged_in';
+	unset($_SESSION['errors']);
+	header('Location: admin/index.php');
 }
 else
 {
-	echo 'incorrect';
+	$_SESSION['errors'][] = 'Invalid User/Pass combination';
+	header('Location: index.php');
 }
 
 ?>
