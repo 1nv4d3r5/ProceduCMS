@@ -7,14 +7,12 @@
 	</head>
 	<body>
 		<div id="main">
+			
 			<div id="header">
 				<a href="#" id="logo"><img src="images/logo.png" alt=""/></a>
-				<ul>
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Testimonials</a></li>
-					<li><a href="#">Contact</a></li>		
+				
+				<ul>					
+					<?php generateMenu($page['title']); ?>
 					<li>
 						<form action="searchForm.php" method="GET">
 							<input type="text" value="search term"/>
