@@ -26,6 +26,25 @@ require_once('includes/header.php');
 						echo $page['content']; 
 					}
 					?>
+					<?php
+						if(!empty($_GET['errors']))
+						{
+							$html = '<div class="error">';
+							foreach($_GET['errors'] as $e)
+							{
+								$html .= $e;
+								$html .= '<br/>';
+							}
+							$html .= '</div>';					
+							echo $html;
+						}
+					?>
+					<?php
+						if(!empty($_GET['notice']))
+						{
+							echo $_GET['notice'];
+						}
+					?>
 				</div>
 				<?php require_once('includes/sidebar.php'); ?>
 			</div>
