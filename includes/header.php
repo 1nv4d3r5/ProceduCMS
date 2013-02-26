@@ -12,7 +12,17 @@
 				<a href="#" id="logo"><img src="images/logo.png" alt=""/></a>
 				
 				<ul>					
-					<?php generateMenu($page['title']); ?>
+					<?php 
+					if(!empty($page['title']))
+					{
+						generateMenu($page['title']); 
+					}
+					else
+					{
+						generateMenu();	
+					}
+						
+					?>
 					<li>
 						<form action="searchForm.php" method="GET">
 							<input type="text" value="search term"/>
