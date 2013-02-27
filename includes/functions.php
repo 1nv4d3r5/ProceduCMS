@@ -25,26 +25,38 @@ function generateMenu($request = false)
 	{
 		$sql = "SELECT * FROM `pages` ORDER BY `id` ASC";		
 		$result = mysqli_query($db, $sql);
+		$html = '';
 		while($r = mysqli_fetch_assoc($result))
 		{
 			// if no active page is active
 			if(empty($request))
 			{
-				echo '<li><a href="index.php?page='.$r['url_slug'].'">'.$r['title'].'</a></li>';
+				$html .= '<li>';
+				$html .= '<a href="index.php?page='.$r['url_slug'].'">'.$r['title'].'</a>';
+				$html .= '</li>';
 			}
 			// if the current active page matches the current db result
 			else if($request == $r['title'])
 			{
-				echo '<li class="active"><a href="index.php?page='.$r['url_slug'].'">'.$r['title'].'</a></li>';	
+				$html .= '<li class="active">';
+				$html .= '<a href="index.php?page='.$r['url_slug'].'">'.$r['title'].'</a>';
+				$html .= '</li>';
 			}
 			else
 			{
-				echo '<li><a href="index.php?page='.$r['url_slug'].'">'.$r['title'].'</a></li>';
+				$html .= '<li>';
+				$html .= '<a href="index.php?page='.$r['url_slug'].'">'.$r['title'].'</a>';
+				$html .= '</li>';
 			}
 			
 		}
 		mysqli_free_result($result);
+		if(!empty($html))
+		{
+			return $html;
+		}
 	}
+	
 }
 
 

@@ -15,11 +15,11 @@
 					<?php 
 					if(!empty($page['title']))
 					{
-						generateMenu($page['title']); 
+						echo generateMenu($page['title']); 
 					}
 					else
 					{
-						generateMenu();	
+						echo generateMenu();	
 					}
 						
 					?>
