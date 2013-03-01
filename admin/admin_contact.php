@@ -8,7 +8,7 @@ if($_SESSION['user']['status'] == 'logged_in')
 ?>
 	<div id="main">
 		<div>
-			<h3>Welcome, <?php echo $_SESSION['user']['username']; ?>. You can <a href="logout.php">log out</a> or go back to the <a href="index.php">main admin panel</a></h3><br/>
+			<h3>Welcome, <?php echo $_SESSION['user']['username']; ?>. You can <a href="../logout.php">log out</a> or go back to the <a href="index.php">main admin panel</a></h3><br/>
 	<?php
 	
 	// if we have a delete request

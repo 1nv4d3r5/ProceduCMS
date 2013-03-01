@@ -10,7 +10,7 @@ require_once("admin_header.php");
 				
 				<div id="main">
 					<div>
-						<h3>Welcome, <?php echo $_SESSION['user']['username']; ?>. You can <a href="logout.php">log out</a> or go to the following admin panels:</h3>
+						<h3>Welcome, <?php echo $_SESSION['user']['username']; ?>. You can <a href="../logout.php">log out</a> or go to the following admin panels:</h3>
 						<ul>
 							<li><a href="admin_contact.php">Comments</a></li>
 							<li><a href="admin_testimonials.php">Testimonials</a></li>
