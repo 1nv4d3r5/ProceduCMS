@@ -71,6 +71,45 @@ h1{
 	margin: 0 auto;
 }
 
+#admin #main div{
+	width: 950px;
+	float: left;
+	background: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	color: #333;
+	margin-top: 15px;
+}
+#admin #main div ul{
+	margin: 10px 0 10px 0;
+	list-style-type: none;
+	width: 950px;
+}
+#admin #main div ul li{
+	width: 930px;
+	float: left;
+	display: block;
+	background: #333;
+	padding: 5px;
+	border-bottom: 1px solid #fff;
+	text-transform: uppercase;
+}
+#admin #main div ul li .admin_panel{
+	width: 910px;
+	background: #666;
+	border-radius: 0;
+	
+}
+#admin #main div ul li.collapsed .admin_panel{
+	display: none;
+}
+#admin #main div ul li:hover{
+	background: #444;
+}
+#admin #main div ul li a:hover{
+	border-bottom: 0;
+}
+
 #header{
 	float: left;
 	width: 930px;
