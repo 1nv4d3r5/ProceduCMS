@@ -1,28 +1,78 @@
 <?php
 
 require_once('config.php');
+
 // connect to our DB
 function connectDB()
 {
+	// connect to db
 	$db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	// if we have a db return it
 	if(!empty($db))
 	{
 		return $db;
 		
 	}
+	// if not, return false
 	else
 	{
 		return false;	
 	}
 }
 
+// return a list of pages, while marking 
+function getPagination($table = false, $currPage = false, $offset = false)
+{
+	// connect to the db
+	$db = connectDB();
+	// if we have a db connection, and $offset and $table have values
+	if($db != false && !empty($offset) && !empty($table))
+	{
+		// do a select on the id column
+		$sql = "SELECT id FROM messages";
+		$result = mysqli_query($db, $sql);
+		// count the results
+		$entries = mysqli_num_rows($result);
+		
+		// prepare the $return variable
+		$return = '<ul class="pagination">';
+		
+		// round the number of pages up to a full number
+		$pages = round($entries/$offset, 0);
+		
+		// generate the actual links
+		$i = 1;
+		while($i <= $pages)
+		{
+			
+			$return .= '<li>';
+			// if we're not on the current page, generate a link
+			if($i != $currPage)
+			{
+				$return .= '<a href="admin_contact.php?page='.$i.'">'.$i.'</a>';
+			}
+			// if not, just output the number
+			else
+			{
+				$return .= $i;
+			}
+			
+			$return .= '</li>';
+			
+			$i++;
+		}
+		// finish our output and return it
+		$return .= '</ul>';
+		return $return;
+	}
+}
 // return a list of available pages from within the db
 function generateMenu($request = false)
 {
 	$db = connectDB();
 	if($db != false)
 	{
-		$sql = "SELECT * FROM `pages` ORDER BY `id` ASC";		
+		$sql = "SELECT * FROM pages ORDER BY id ASC";		
 		$result = mysqli_query($db, $sql);
 		$html = '';
 		while($r = mysqli_fetch_assoc($result))
@@ -68,7 +118,7 @@ function getPageFromRequest($request)
 	$db = connectDB();
 	if($db != false)
 	{
-		$sql = "SELECT * FROM `pages` WHERE `url_slug` = '{$request}'";		
+		$sql = "SELECT * FROM pages WHERE url_slug = '{$request}'";		
 		$result = mysqli_fetch_assoc(mysqli_query($db, $sql));		 
 		if(!empty($result))
 		{
@@ -90,7 +140,7 @@ function getUserDetails($username)
 		$db = connectDB();
 		if($db != false)
 		{
-			$sql = "SELECT * FROM `users` WHERE `username` = '{$username}'";		
+			$sql = "SELECT * FROM users WHERE username = '{$username}'";		
 			$result = mysqli_fetch_assoc(mysqli_query($db, $sql));		 
 			if(!empty($result))
 			{

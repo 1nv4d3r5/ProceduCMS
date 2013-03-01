@@ -18,6 +18,17 @@ a img {border:none;}
  *  GENERAL RULES
  */
 
+table td, th{
+	border: 1px solid #333;
+	padding: 5px;
+}
+table th{
+	border-bottom: 3px solid #333;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+}
+
 body{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
@@ -63,6 +74,8 @@ h1{
 	padding: 5px;
 	margin-top: 10px;
 }
+
+
 /*
  *  LAYOUT RULES
  */
@@ -103,11 +116,29 @@ h1{
 #admin #main div ul li.collapsed .admin_panel{
 	display: none;
 }
+#admin #main div ul li .admin_panel .loader{
+	background: none;
+	text-align: center;
+	width: 910px;
+	padding: 0;
+}
+
 #admin #main div ul li:hover{
 	background: #444;
 }
 #admin #main div ul li a:hover{
 	border-bottom: 0;
+}
+
+#admin #main .pagination li{
+	background: none;
+	display: block;
+	width: 10px;
+	height: 15px;
+	float: left;
+}
+#admin #main .pagination li:hover{
+	background: none;
 }
 
 #header{
