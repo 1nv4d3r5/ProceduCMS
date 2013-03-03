@@ -193,6 +193,20 @@ h1{
 #content .article{
 	padding-bottom: 20px;
 }
+#content .article p{
+	margin-top: 5px;
+}
+#content .article h2{
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #ffffff;
+	letter-spacing: 1px;
+	border-bottom: 1px dotted #fff;
+	float: left;
+	display: block;
+	margin-bottom: 10px;
+}
 #content .testimonial{
 	background: #666666;
 	float: left;
