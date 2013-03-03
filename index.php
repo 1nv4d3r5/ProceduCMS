@@ -44,6 +44,23 @@ require_once('includes/header.php');
 						{
 							echo $_GET['notice'];
 						}
+						
+						// testimonials
+						if(!empty($page['title']) && $page['title'] == 'testimonials')
+						{
+							$db = connectDB();
+							if(!empty($db))
+							{
+								$sql = 'SELECT * FROM `testimonials` WHERE `published` = \'1\' ';
+								$result = mysqli_query($db, $sql);
+								while($r = mysqli_fetch_assoc($result))
+								{
+									echo '<div class="testimonial"><span class="name">'.$r['name'].'</span> said: <br/>';
+									echo '<p>'.$r['testimonial'].'</p></div>';								
+								}
+								mysqli_free_result($result);
+							}
+						}
 					?>
 				</div>
 				<?php require_once('includes/sidebar.php'); ?>

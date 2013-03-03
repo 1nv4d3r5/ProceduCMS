@@ -193,6 +193,17 @@ h1{
 #content .article{
 	padding-bottom: 20px;
 }
+#content .testimonial{
+	background: #666666;
+	float: left;
+	padding: 10px;
+	margin-top: 10px;
+	display: block;
+	border-radius: 10px;
+}
+#content .testimonial .name{
+	font-weight: bold;
+}
 #sidebar{
 	margin-top: 10px;
 	float: left;

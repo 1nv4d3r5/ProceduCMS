@@ -19,7 +19,7 @@
 							</form>
 							<?php } else if($_SESSION['user']['status'] == 'logged_in'){ ?>
 								Welcome, <a href="#"><?php echo $_SESSION['user']['username']; ?></a>.<br/>
-								<a href="logout.php">Log out?</a>
+								<a href="logout.php">Log out?</a> or go to the <a href="admin/index.php">admin panel</a>
 							<?php } ?>
 						
 					</div>
