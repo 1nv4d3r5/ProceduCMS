@@ -29,7 +29,7 @@ function getPagination($table = false, $currPage = false, $offset = false)
 	if($db != false && !empty($offset) && !empty($table))
 	{
 		// do a select on the id column
-		$sql = "SELECT id FROM messages";
+		$sql = "SELECT id FROM {$table}";
 		$result = mysqli_query($db, $sql);
 		// count the results
 		$entries = mysqli_num_rows($result);
@@ -37,8 +37,8 @@ function getPagination($table = false, $currPage = false, $offset = false)
 		// prepare the $return variable
 		$return = '<ul class="pagination">';
 		
-		// round the number of pages up to a full number
-		$pages = round($entries/$offset, 0);
+		// round the number of pages up to a full number		
+		$pages = ceil($entries/$offset);
 		
 		// generate the actual links
 		$i = 1;
@@ -49,7 +49,7 @@ function getPagination($table = false, $currPage = false, $offset = false)
 			// if we're not on the current page, generate a link
 			if($i != $currPage)
 			{
-				$return .= '<a href="admin_contact.php?page='.$i.'">'.$i.'</a>';
+				$return .= '<a href="'.$_SERVER['PHP_SELF'].'?page='.$i.'">'.$i.'</a>';
 			}
 			// if not, just output the number
 			else
